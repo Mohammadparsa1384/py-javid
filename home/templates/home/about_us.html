@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+  {% block title %} درباره ما {% endblock title %}
+  
+
+  {% block meta %}
+  
+  <meta content=" پیمانکاری گودبرداری جاوید یکی از پیشگامان در صنعت ساخت و ساز است که به مدت بیش از دو دهه در این زمینه فعالیت داشته است. " name="description">
+
+  {% endblock meta %}
+
+{% block main %}
+
+
+<main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>درباره ما</h2>
+          <ol>
+            <li><a href="{% url "home:main" %}">خانه</a></li>
+            <li>درباره ما</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section class="about" data-aos="fade-up">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{% static "img/truck5.jpg" %}" class="img-fluid rounded" alt="پیمانکاری جاوید">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 justify">
+            <h3>درباره پیمانکاری جاوید</h3>
+            <p class="fst-italic">
+               پیمانکاری گودبرداری "جاوید" با بیش از 20 سال سابقه در عرصه‌ی ساخت و ساز و گودبرداری، از تجربه و تخصص فنی بالایی برخوردار است که به ارائه خدمات با کیفیت و قابل اعتماد کمک می کند.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> تیم متخصص و متعهد </li>
+              <li><i class="bi bi-check2-circle"></i> تنوع خدمات </li>
+              <li><i class="bi bi-check2-circle"></i> تجربه و تخصص</li>
+            </ul>
+            <p>
+             پیمانکاری گودبرداری "جاوید" یکی از پیشگامان در صنعت ساخت و ساز است که به مدت بیش از دو دهه در این زمینه فعالیت داشته است. با تلاش، تخصص و تجربه، "جاوید" به یکی از پیمانکاری های معتبر و قابل اعتماد در این صنعت تبدیل شده است. این تعهد به عنوان یک نماد از کیفیت، قابلیت و رضایت مشتریان شناخته می‌شود.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+{% endblock main %}

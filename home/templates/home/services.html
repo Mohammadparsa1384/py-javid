@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+  
+  {% block title %}  خدمات {% endblock title %}
+
+  {% block meta %}
+  <meta name="keywords" content="خدمات پیمانکاری جاوید">
+  {% endblock meta %}
+
+{% block main %}
+<main id="main">
+
+    <!-- ======= Our Services Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>خدمات ما</h2>
+          <ol>
+            <li><a href="index.html">خانه</a></li>
+            <li>خدمات ما</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Our Services Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section class="services">
+      <div class="container">
+
+        <div class="row d-flex justify-content-center">
+
+          
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-pink">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4 class="title"><a href="#">گود برداری و حفاری</a></h4>
+              <p class="description">با استفاده از تجهیزات حرفه‌ای و تخصص فنی، ما قادر به انجام عملیات گودبرداری و حفاری در انواع زمین‌شناسی‌ها و شرایط مختلف آب و هوایی هستیم. این شامل حفاری برای ساخت و سازهای عمیق، پایه‌گذاری‌های بنیادی، و حفر چاه‌های آب و گاز می‌شود.</p>
+            </div>
+          </div>
+          
+          
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box icon-box-cyan">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="#">پیمانکاری عمومی</a></h4>
+              <p class="description">ما ارائه خدمات پیمانکاری عمومی در زمینه‌های مختلف ساختمانی، از جمله ساخت و سازهای مسکونی، تجاری و صنعتی را فراهم می‌کنیم. با تکیه بر تیم متخصص و تجربه در انجام پروژه‌های متنوع، ما به ارائه خدمات با کیفیت و به موقع متعهد هستیم.</p>
+            </div>
+          </div>
+
+          
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box icon-box-blue">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="#">قراردادهای شخصی‌سازی شده</a></h4>
+              <p class="description">ما همیشه سعی می‌کنیم تا بهترین پیشنهادات را برای نیازهای خاص و منحصربه‌فرد مشتریانمان ارائه دهیم. قراردادهایی با شرایط انعطاف‌پذیر و شفافیت بالا را ارائه می‌دهیم تا همواره بهترین خدمات را به شما ارائه دهیم.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+    <!-- ======= Service Details Section ======= -->
+    <section class="service-details">
+      <div class="container">
+
+        <div class="row" dir="ltr">
+
+          {% for service in services %}
+          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ service.image.url }}" alt="{{service.title}}">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" dir="rtl"><a href="#">{{ service.title }}</a></h5>
+                <p class="card-text" dir="rtl"> {{ service.description }} </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          
+
+          
+        </div>
+
+      </div>
+    </section><!-- End Service Details Section -->
+
+    
+
+  </main><!-- End #main -->
+
+{% endblock main %}

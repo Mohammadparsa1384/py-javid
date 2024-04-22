@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+  {% block title %} تماس با ما{% endblock title %}
+  
+  
+
+{% block main %}
+
+<main id="main">
+
+    <!-- ======= Contact Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>تماس با ما</h2>
+          <ol>
+            <li><a href="{% url "home:main" %}">خانه</a></li>
+            <li>تماس با ما</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <i class="bx bx-map"></i>
+                  <h3>آدرس</h3>
+                  <p>کرج بلوار ملاصدرا خیابان ابوذر شمالی </p>
+                </div>
+              </div>
+              
+              <div class="col-md-6 mx-auto">
+                <div class="info-box">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>شماره تماس</h3>
+                  <p>0912-161-2124<br>0937-161-2124</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <form method="post" class="php-email-form">
+              
+                {% csrf_token %}
+
+              <div class="form-group mt-3">
+                {{form.subject}}
+              </div>
+              <div class="form-group mt-3">
+                {{form.desc}}
+              </div>
+              <div class="my-3">
+                <div class="sent-message">پیام شما با موفقیت ارسال شد. ممنون!</div>
+              </div>
+              <div class="text-center"><button class="send_msg" type="submit">ارسال پیام</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+    
+
+  </main><!-- End #main -->
+
+
+{% endblock main %}

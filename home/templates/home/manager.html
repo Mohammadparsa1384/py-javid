@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+<title>{% block title %} مدیریت {% endblock title %}</title>
+
+{% block meta %}
+
+<meta name="keywords" content=" مدیریت پیمانکاری جاوید , مدیریت, جواد جاویدی, علیرضا جاویدی">
+
+
+{% endblock meta %}
+
+
+
+{% block main %}
+
+<main id="main">
+
+    <!-- ======= Our Team Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>مدیریت</h2>
+          <ol>
+            <li><a href="{% url "home:main" %}">خانه</a></li>
+            <li>مدیریت</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Our Team Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row d-flex justify-content-around">
+
+          
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="{% static "img/team/javad.jpg" %}" class="img-fluid rounded" alt="">
+                
+              </div>
+              <div class="member-info text-center">
+                <h4 class="my-3">جواد جاویدی</h4>
+                <span> پیمانکار</span>
+                
+              </div>
+            </div>
+          </div>
+
+        
+
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+  </main><!-- End #main -->
+
+
+{% endblock main %}
