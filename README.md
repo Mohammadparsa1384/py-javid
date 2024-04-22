@@ -1,4 +1,4 @@
-# workinja
+# py-javid
 
 1. Create Virtuall enviroments: python -m venv <your name of virtual envoiroments>
 2. Activate it to install requirements
