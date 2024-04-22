@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+<link href="images/favicon.png" rel="icon" />
+<title>{% block title %}پیمانکاری جاوید |صفحه ورود {% endblock title %}</title>
+<meta name="description" content="Login and Register Form Html Template">
+<meta name="author" content="harnishdesign.net">
+
+<!-- Web Fonts
+========================= -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i' type='text/css'>
+
+<!-- Stylesheet
+========================= -->
+<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static "css/all.min.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static "css/stylesheet.css" %}" />
+<!-- Colors Css -->
+<link id="color-switcher" type="text/css" rel="stylesheet" href="{% static "css/color-red.css" %}" />
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="preloader preloader-dark">
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<!-- Preloader End -->
+
+<div id="main-wrapper" class="oxyy-login-register">
+  <div class="hero-wrap min-vh-100">
+    <div class="hero-mask opacity-4 bg-secondary"></div>
+    <div class="hero-bg hero-bg-scroll" style="background-image:url('{% static "img/login-bg.jpg" %}');"></div>
+    <div class="hero-content d-flex min-vh-100">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-md-9 col-lg-7 col-xl-5 mx-auto">
+            <div class="hero-wrap rounded shadow-lg p-4 py-sm-5 px-sm-5 my-4">
+              <div class="hero-mask opacity-9 bg-dark"></div>
+              <div class="hero-content">
+                <h3 class="text text-white text-center my-3">پیمانکاری جاوید</h3>
+                
+                <form id="loginForm" class="form-dark" method="post">
+
+                    {% if form.non_field_errors %}
+                  
+                    {% for error  in form.errors.values %}
+                    <div class="alert alert-danger">{{error}}</div> 
+                    {% endfor %}
+  
+                    {% endif %}
+  
+                    {% if form.errors %}
+  
+                    {% for error  in form.errors.values %}
+                    <div class="alert alert-danger">{{error}}</div> 
+                    {% endfor %}
+                    
+                    {% endif %}
+
+                    {% csrf_token %}
+                  <div class="form-group icon-group">
+                    {{form.username}}
+                    <span class="icon-inside"><i class="fas fa-envelope"></i></span> </div>
+                  <div class="form-group icon-group">
+                    {{form.password}}
+                    <span class="icon-inside"><i class="fas fa-lock"></i></span> </div>
+                  <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">ورود</button>
+                  
+                </form>
+                <div class="d-flex align-items-center mt-2 mb-3">
+                  <hr class="flex-grow-1 border-dark">
+                  
+                  <hr class="flex-grow-1 border-dark">
+                </div>
+                
+                <p class="text-2 text-muted text-center mb-0">حساب ندارید؟ <a class="btn-link text-light text-3" href="{% url "accounts:register" %}">ثبت نام</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Styles Switcher End --> 
+<!-- Script --> 
+<script src="{% static "js/jquery.min.js" %}"></script> 
+<script src="{% static "js/jquery.min.js" %}"></script> 
+<!-- Style Switcher --> 
+<script src="{% static "js/switcher.min.js" %}"></script> 
+<script src="{% static "js/theme.js" %}"></script>
+</body>
+</html>
