@@ -1,0 +1,314 @@
+﻿@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 900;
+	src: url('../fonts/');
+	src: url('../fonts/eot/IRANSansWeb(FaNum.html)_Black.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/woff2/IRANSansWeb(FaNum.html)_Black.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/woff/IRANSansWeb(FaNum.html)_Black.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/ttf/IRANSansWeb(FaNum.html)_Black.ttf') format('truetype');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: bold;
+	src: url('../fonts/eot/IRANSansWeb(FaNum.html)_Medium.eot');
+	src: url('../fonts/eot/IRANSansWeb(FaNum.html)_Medium.emot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/woff2/IRANSansWeb(FaNum.html)_Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/woff/IRANSansWeb(FaNum.html)_Medium.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/ttf/IRANSansWeb(FaNum.html)_Medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/eot/IRANSansWeb(FaNum.html)_Light.eot');
+	src: url('../fonts/eot/IRANSansWeb(FaNum.html)_Light.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/woff2/IRANSansWeb(FaNum.html)_Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/woff/IRANSansWeb(FaNum.html)_Light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/ttf/IRANSansWeb(FaNum.html)_Light.ttf') format('truetype');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 200;
+	src: url('../fonts/eot/IRANSansWeb(FaNum.html)_UltraLight.eot');
+	src: url('../fonts/eot/IRANSansWeb(FaNum.html)_UltraLight.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/woff2/IRANSansWeb(FaNum.html)_UltraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/woff/IRANSansWeb(FaNum.html)_UltraLight.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/ttf/IRANSansWeb(FaNum.html)_UltraLight.ttf') format('truetype');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/eot/IRANSansWeb(FaNum.html).eot');
+	src: url('../fonts/eot/IRANSansWeb(FaNum.html).eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/woff2/IRANSansWeb(FaNum.html).woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/woff/IRANSansWeb(FaNum.html).woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/ttf/IRANSansWeb(FaNum.html).ttf') format('truetype');
+}
+@font-face {
+	font-family: iranyekan;
+	font-style: normal;
+	font-weight: 600;
+	src: url('../fonts/yekan/eot/iranyekanwebboldfanum.eot');
+	src: url('../fonts/yekan/eot/iranyekanwebboldfanumd41d.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/yekan/woff/iranyekanwebboldfanum.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/yekan/ttf/iranyekanwebboldfanum.ttf') format('truetype');
+}
+@font-face {
+	font-family: iranyekan;
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/yekan/eot/iranyekanweblightfanum.eot');
+	src: url('../fonts/yekan/eot/iranyekanweblightfanumd41d.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/yekan/woff/iranyekanweblightfanum.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/yekan/ttf/iranyekanweblightfanum.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: iranyekan;
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/yekan/eot/iranyekanwebregularfanum.eot');
+	src: url('../fonts/yekan/eot/iranyekanwebregularfanumd41d.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/yekan/woff/iranyekanwebregularfanum.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/yekan/ttf/iranyekanwebregularfanum.ttf') format('truetype');
+}
+@font-face {
+	font-family: aviny;
+	font-style: normal;
+	src: url('../fonts/aviny.ttf') format('truetype');
+}
+
+p {
+    line-height: 1.9rem;
+}
+/*------------------ برای تغییر فونت کد زیر را مطابق راهنما ویرایش کنید ----------------- */
+body {
+    font-family: iranyekan;
+}
+h1, h2, h3, h4, h5, h6, .font-primary {
+    font-family: iransans;
+}
+.rtl-navbar a, .rtl-navbar a:focus , #hero .rtl-btn-get-started , #hero-no-slider .rtl-btn-get-started
+, #footer .footer-top .footer-info p , .rtl-facts .counters p , .portfolio #portfolio-flters li , .pricing h4
+, .pricing .get-started-btn , .glightbox-clean .gslide-title {
+	font-family: "iranyekan", iransans;
+}
+#hero h2 , #hero-no-slider h2, #header .logo h1 {
+    font-family: "aviny", lalezar;
+}
+/*---------------------------- header --------------------------------- */
+.rtl-navbar a, .rtl-navbar a:focus {
+    padding: 10px 30px 10px 0;
+}
+#header .logo h1 {
+    letter-spacing: 0px;
+    font-size: 40px;
+}
+#hero h2 , #hero-no-slider h2 {
+    font-size: 60px;
+	font-weight: 500;
+}
+.rtl-navbar a i, .rtl-navbar a:focus i {
+    margin-left: 0px;
+    margin-right: 5px;
+}
+.navbar-mobile .mobile-nav-toggle {
+	left: 15px;
+	right: auto;
+}
+/*---------------------------- End header --------------------------------- */
+/*---------------------------- Hero Section --------------------------------- */
+#hero-no-slider .rtl-btn-get-started , #hero .rtl-btn-get-started {
+    letter-spacing: 0px;
+}
+/*---------------------------- End Hero Section --------------------------------- */
+/*---------------------------- Why Us Section --------------------------------- */
+.rtl-why-us .icon-box .icon {
+    float: right;
+}
+.rtl-why-us .icon-box .description {
+    margin-left: 0px;
+    margin-right: 95px;
+	text-align: justify;
+}
+.rtl-why-us .icon-box .title {
+    margin-left: 0px;
+    margin-right: 95px;
+}
+/*---------------------------- End Why Us Section --------------------------------- */
+/*---------------------------- Features Section --------------------------------- */
+.fst-italic {
+    font-style: normal !important;
+	text-align: justify;
+}
+.features ul i {
+    padding-right: 0px;
+    padding-left: 4px;
+}
+.features h3 {
+	line-height: 1.8em;
+}
+.features p:last-child {
+	text-align: justify;
+}
+.pt-5 {
+	text-align: justify;
+}
+/*---------------------------- End Features Section --------------------------------- */
+/*---------------------------- End Footer --------------------------------- */
+#footer .footer-newsletter form input[type="submit"] {
+    left: 0;
+    right: auto;
+}
+/*---------------------------- End Footer --------------------------------- */
+/*---------------------------- About --------------------------------- */
+
+.breadcrumbs ol li + li {
+    padding-left: 0px;
+    padding-right: 10px;
+}
+.breadcrumbs ol li + li::before {
+    padding-left: 10px;
+    padding-right: 0px;
+}
+.rtl-skills .progress .skill {
+    margin: 0 20px 0 20px;
+}
+.rtl-skills .progress .skill .val {
+    float: left;
+}
+.rtl-skills .progress-bar {
+    text-align: right;
+}
+/*---------------------------- End About --------------------------------- */
+/*---------------------------- Blog Single --------------------------------- */
+.blog .entry .entry-meta i {
+    margin-right: 0px;
+    margin-left: 8px;
+}
+.blog .entry .entry-meta ul li + li {
+    padding-left: 0px;
+    padding-right: 20px;
+}
+.blog .entry .entry-content blockquote::after {
+    left: auto;
+    right: 0;
+}
+.rtl-blog .entry .entry-content p {
+	line-height: 2em;
+	font-weight: 100;
+	text-align: justify;
+}
+.rtl-blog .entry .entry-content blockquote p {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+}
+.rtl-blog .entry .entry-footer .cats {
+	padding: 0 0 0 20px;
+}
+.rtl-blog .entry .entry-footer .tags li + li::before {
+	padding-left: 6px;
+	padding-right: 0px;
+}
+.rtl-blog .blog-author img {
+	margin-right: 0px;
+	margin-left: 20px;
+}
+.rtl-blog .blog-author .social-links {
+	margin: 10px 0 0 10px;
+}
+.rtl-blog .blog-author p {
+	font-style: normal;
+	text-align: justify;
+}
+.rtl-blog .blog-author h4 {
+	font-weight: 600;
+	font-size: 20px;
+}
+.rtl-blog .blog-comments .comment h5 .reply {
+	padding-left: 0px;
+	padding-right: 10px;
+}
+.rtl-blog .blog-comments .comment .comment-img {
+	margin-left: 14px;
+	margin-right: 0px;
+}
+.blog .blog-comments .comment time {
+	margin-top: 5px;
+}
+.blog .sidebar .categories ul a span {
+	padding-left: 0px;
+	padding-right: 5px;
+}
+.rtl-blog .sidebar .search-form form button {
+	right:auto;
+	left: 0;
+	border-radius: 4px 0 0 4px;
+}
+.rtl-blog .sidebar .recent-posts img {
+	float: right;
+}
+.rtl-blog .sidebar .recent-posts h4 {
+	margin-left: 0px;
+	margin-right: 95px;
+}
+.rtl-blog .sidebar .recent-posts time {
+	margin-left: 0px;
+	margin-right: 95px;
+}
+/*---------------------------- End Blog Single --------------------------------- */
+
+.rtl-blog .entry .entry-title a {
+	font-size: 20px;
+}
+.portfolio-details .portfolio-description h2 {
+	font-size: 20px;
+}
+.service-details .card-text {
+	text-align: justify;
+	font-weight: 100;
+}
+.pricing h4 {
+	font-size: 40px;
+}
+.pricing ul li {
+	text-align: right;
+}
+.team .member .member-info p {
+	font-style: normal;
+	text-align: justify;
+}
+
+.navbar .dropdown ul {
+	right: 14px;
+	left: auto;
+}
+.justify {
+	text-align: justify;
+}
+.testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
+	color: #c5c5c5;
+}
+.testimonials .testimonial-item .quote-icon-left {
+	left: 5px;
+}
+.testimonials .testimonial-item .quote-icon-right {
+	right: 5px;
+}
+@media (min-width: 1366px) {
+	.rtl-dropdown {right: auto !important;left: -100% !important;}
+}
+@media (max-width: 1366px) {
+	.navbar .dropdown .dropdown ul {right: auto;}
+}
+@media (max-width: 1200px) {
+	.rtl-navbar a, .rtl-navbar a:focus {padding: 10px 30px 10px 30px;}
+}
+@media (max-width: 575px) {
+	#hero h2, #hero-no-slider h2 {font-size: 50px}
+}
