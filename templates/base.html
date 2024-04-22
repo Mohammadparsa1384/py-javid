@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+
+<!-- Mirrored from demo.farscod.ir/moderna/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Aug 2023 05:02:53 GMT -->
+<head>
+
+    <title>{% block title %}{% endblock title %}</title>
+
+    {% block meta %}{% endblock meta %}
+
+</head>
+
+
+
+{% include "includes/head_links.html" %}
+
+<body>
+
+
+{% include "includes/header.html" %}
+
+
+{% block main %}
+
+
+{% endblock main %}
+
+
+ {% include "includes/footer.html" %}
+
+
+  {% include "includes/footer_links.html" %}
+  
+  </body>
+  
+  
+  
+  </html>

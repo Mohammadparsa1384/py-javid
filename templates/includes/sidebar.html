@@ -1,0 +1,46 @@
+{% load static %}
+<div class="col-lg-4">
+
+  <div class="sidebar">
+
+    <h3 class="sidebar-title">جستجو</h3>
+    <div class="sidebar-item search-form">
+      <form action="{% url "blog:search" %}">
+        <input name="q" type="text">
+        <button type="submit"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End sidebar search formn-->
+
+    <h3 class="sidebar-title">دسته بندی ها</h3>
+    <div class="sidebar-item categories">
+      <ul>
+        {% for category in categories %}
+        <li><a href="{{ category.get_absolute_url }}">{{ category.name }}<span>({{ category.articles.all.count }})</span></a></li>
+        
+        {% endfor %}
+        
+        
+      </ul>
+    </div><!-- End sidebar categories-->
+
+    <h3 class="sidebar-title">جدیدترین پست ها</h3>
+    <div class="sidebar-item recent-posts">
+
+      {% for article in recent_articles %}
+      
+      <div class="post-item clearfix">
+        <img src="{{ article.image.url }}" alt="{{ article.title }}">
+        <h4><a href="{{article.get_absolute_url}}">{{ article.title }}</a></h4>
+        <time datetime="2020-01-01">{{ article.created }}</time>
+      </div>
+
+      {% endfor %}
+
+    </div><!-- End sidebar recent posts-->
+
+    
+
+  </div><!-- End sidebar -->
+
+</div>
+<!-- End blog sidebar -->

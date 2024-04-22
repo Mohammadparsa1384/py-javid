@@ -1,0 +1,48 @@
+<!-- ======= Header ======= -->
+<header style="background: rgba(30, 67, 86, 0.8);" id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="#"><span>پیمانکاری جاوید</span></a></h1>
+        
+      </div>
+
+      <nav id="navbar" class="navbar rtl-navbar">
+        <ul>
+          <li><a class="{% if request.resolver_match.url_name == 'main' %}active{% endif %}" href="{% url "home:main" %}">خانه</a></li>
+          <li><a class="{% if request.resolver_match.url_name == 'about_us' %}active{% endif %}" href="{% url "home:about_us" %}">درباره ما</a></li>
+
+          {% if request.user.is_authenticated %}
+          <li class="dropdown"><a href="#"><span>اطلاعات کاربری</span> <i class="bi bi-chevron-down"></i></a>
+          {% else %}
+
+          <li class="dropdown"><a href="{% url "accounts:register" %}"><span>عضویت در سایت</span> <i class="bi bi-chevron-down"></i></a>
+
+
+          {% endif %}
+            <ul>
+              {% if request.user.is_authenticated %}
+
+              <li><a href="#">{{ request.user }}</a></li>
+              
+              <li><a href="{% url "accounts:logout" %}">خروج از حساب</a></li>
+
+              {% else %}
+              <li><a href="{% url "accounts:login" %}">ورود</a></li>
+              <li><a href="{% url "accounts:register" %}">ثبت نام </a></li>
+              
+              {% endif %}
+              
+            </ul>
+          </li>
+          <li><a class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}" href="{% url "home:services" %}">خدمات</a></li>
+        
+          <li><a class="{% if request.resolver_match.url_name == 'articles' %}active{% endif %}" href="{% url "blog:articles" %}">وبلاگ</a></li>
+          <li><a class="{% if request.resolver_match.url_name == 'contact_us' %} active {% endif %}" href="{% url "home:contact_us" %}">تماس با ما</a></li>
+          <li><a class="{% if request.resolver_match.url_name == 'managers' %}active{% endif %}" href="{% url "home:managers" %}">مدیریت</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
