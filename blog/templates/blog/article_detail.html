@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% load static %}
+
+<title>{% block title %} {{ article.title }} {% endblock title %}</title>
+
+{% block  meta%}
+
+<meta name="description" content="{{ article.body }}">
+<meta property="og:title" content="{{article.body}}|پیمانکاری جاوید">
+<meta property="og:image" content="https://peymankariyejavid.ir{{article.image.url}}">
+<meta property="og:url" content="https://peymankariyejavid.ir/{{article.slug}}">
+<meta property="og:site_name" content="پیمانکاری جاوید">
+<meta property="og:description" content="{{article.body}}">
+
+
+{% endblock meta %}
+
+{% block main %}
+
+<main id="main">
+
+    <!-- ======= Blog Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>وبلاگ</h2>
+
+          <ol>
+            <li><a href="{% url "home:main" %}">خانه</a></li>
+            <li><a href="{% url "blog:articles" %}">وبلاگ</a></li>
+            
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+    <!-- ======= Blog Single Section ======= -->
+    <section id="blog" class="blog rtl-blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <article class="entry entry-single">
+
+              <div class="entry-img">
+                <img src="{{ article.image.url }}" alt="{{ article.title }}" class="img-fluid">
+              </div>
+
+              <h2 class="entry-title">
+                <a href="blog-single.html">{{ article.title }}</a>
+              </h2>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">{{ article.author }}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#"><time datetime="2020-01-01"> {{ article.created }}</time></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#">{{ article.comments.all.count }} دیدگاه </a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p>
+                  {{ article.body }}
+                </p>
+
+              </div>
+
+              
+
+            </article><!-- End blog entry -->
+
+            <h4 class="comments-count">{{ article.comments.all.count }} دیدگاه</h4>
+
+            <!-- My comment section -->
+            <div class="blog-comments">
+
+            {% for comment in article.comments.all %}
+            
+            {% if comment.parent_id == None %}
+            
+            <div class="blog-author d-flex align-items-center">
+              <img src="{% static "img/user-no-image.jpg" %}" class="rounded-circle float-left" alt="">
+              <div>
+                <h4>{{ comment.user }}<a onclick="set_id({{comment.id}})" href="#set_comment" class="reply"><br><br><i class="bi bi-reply-fill"></i> پاسخ</a> </h4><br>
+                
+                <p>
+                  {{comment.body}}
+                </p>
+              </div>
+            </div>
+            <!-- End My comment section -->
+
+            {% endif %}
+
+            
+
+              {% for reply in comment.replies.all %}
+              
+              <!-- Reply Section -->
+              <div id="comment-1" class="comment mx-3">
+                <div class="d-flex" style="margin-right: 35px;">
+                  <div class="comment-img"><img src="{% static "img/user-no-image.jpg" %}" alt="پروفایل کاربری"></div>
+                  <div>
+                    <h5><a class="pd-2" href="#">{{ reply.user }}</a> </h5>
+                    <time datetime="2020-01-01">{{ reply.created }}</time>
+                    <p>
+                      {{ reply.body }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Reply section #1 -->
+
+              {% endfor %}
+
+            {% endfor %}
+
+
+              {% if request.user.is_authenticated %}
+              <div class="reply-form">
+                <h4 id="set_comment">دیدگاه بگذارید</h4>
+                <form method="post" action="#">
+                  {% csrf_token %}
+                  
+                  <div class="row">
+                    <div class="col form-group">
+
+                    <input id="parent_id" name="parent_id" class="form-control my-3" type="hidden" placeholder="id">
+                      <textarea name="body" class="form-control" id="body" placeholder="دیدگاه شما *" required></textarea>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">ارسال دیدگاه</button>
+
+                </form>
+
+              </div>
+              {% else %}
+              <a class="btn btn-primary w-100" href="{% url "accounts:login" %}">برای ارسال کامنت اول وارد سایت شوید</a>
+              {% endif %}
+              
+
+            </div><!-- End blog comments -->
+
+          </div><!-- End blog entries list -->
+
+          {% include "includes/sidebar.html" %}
+          
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Single Section -->
+
+  </main><!-- End #main -->
+
+  <script>
+    function set_id(id){
+      let inp = document.getElementById("parent_id")
+      let textBox = document.getElementById("body")
+      textBox.placeholder = "پاسخ خود را وارد کنید"
+      inp.value = id 
+        
+    }
+  
+  </script>
+{% endblock main %}

@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+
+<title>{% block title %}وبلاگ پیمانکاری جاوید{% endblock title %}</title>
+
+{% block meta %}
+
+<meta name="keywords" content="وبلاگ , وبلاگ پیمانکاری جاوید">
+
+{% endblock meta %}
+
+{% block main %}
+
+<main id="main">
+
+    <!-- ======= Blog Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>آرشیو وبلاگ</h2>
+
+          <ol>
+            <li><a href="{% url "home:main" %}">خانه</a></li>
+            <li>آرشیو وبلاگ</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog rtl-blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            {% for article in articles %}
+            
+            <article class="entry">
+
+              <div class="entry-img">
+                <img src="{{article.image.url}}" alt="{{ article.title }}" class="img-fluid">
+              </div>
+
+              <h2 class="entry-title">
+                <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+              </h2>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{{article.get_absolute_url}}"> {{ article.author }} </a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="{{article.get_absolute_url}}"><time datetime="2020-01-01">{{ article.created }}</time></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="{{article.get_absolute_url}}">{{ article.comments.all.count }} دیدگاه</a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p>
+                  {{ article.body|truncatewords:"30" }}
+                </p>
+                <div class="read-more">
+                  <a href="{{ article.get_absolute_url }}">مطالعه بیشتر</a>
+                </div>
+              </div>
+
+            </article><!-- End blog entry -->
+
+            {% endfor %}
+            
+
+            
+
+            <div class="blog-pagination">
+              <ul class="justify-content-center">
+  
+                {% if page_obj.has_other_pages %} 
+  
+                  {% if page_obj.has_previous %}
+                  <li><a href="?page={{ page_obj.previous_page_number }}{% if request.GET.q %}&q={{request.GET.q}} {% endif %}">&laquo;</a></li>
+                  {% endif %}
+  
+                  {% for i in page_obj.paginator.page_range %}
+                    {% if page_obj.number == i %}
+                        <li class="active"><a href="?page={{i}}{% if request.GET.q %}&q={{request.GET.q}} {% endif %}"> {{i}} </a></li>
+                      
+                    {% else %}
+                    <li class=""><a href="?page={{i}}{% if request.GET.q %}&q={{request.GET.q}} {% endif %}"> {{i}} </a></li>
+  
+  
+                    {% endif %}
+                  {% endfor %}
+  
+  
+                  {% if page_obj.has_next %}
+                  <li><a href="?page={{page_obj.next_page_number}}{% if request.GET.q %}&q={{request.GET.q}} {% endif %}">&raquo;</a></li>
+                  {% endif %}
+                {% endif %}
+              </ul>
+            </div>
+
+          </div><!-- End blog entries list -->
+
+          {% include "includes/sidebar.html" %}
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Blog Section -->
+
+</main>
+
+{% endblock main %}
+
+
+
+  <!-- End #main -->
